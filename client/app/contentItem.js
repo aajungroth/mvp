@@ -2,18 +2,17 @@
 class ContentItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
-    this.listValue = this.props.children;
+    this.listValue = this.props.listValue;
   }
   render() {
+    this.listValue = this.props.listValue
     return(
-      <div className="contentItem">
+      <li className="contentItem">
         {this.listValue}
         <p>Funny text</p>
         <a href="#"/>
-      </div>
+      </li>
     );
   }
 }
+window.ContentItem = ContentItem;

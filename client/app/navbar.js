@@ -2,9 +2,6 @@
 class Navbar extends React.Component {
   constructor() {
     super();
-    this.state = {
-
-    };
   }
   render() {
     return (
@@ -17,3 +14,4 @@ class Navbar extends React.Component {
     );
   };
 }
+window.Navbar = Navbar;
