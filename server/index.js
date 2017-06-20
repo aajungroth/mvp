@@ -14,7 +14,9 @@ app.get('/', function (req, res) {
 
 app.get('/generate', function (req, res) {
   res.statuscode = 200;
-  res.send('Hello World!');
+  var message = 'Hello Word!';
+  var jsonMessage = JSON.stringify(message);
+  res.send(jsonMessage);
 });
 
 app.listen(3000, function() {

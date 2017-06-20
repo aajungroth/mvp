@@ -12,6 +12,20 @@ class App extends React.Component {
   }
   handleClick() {
     console.log('Click');
+    /*$.get("/generate", function(data, status) {
+      if (status)
+    });*/
+    $.ajax({
+      url: "/generate",
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        console.log(data);
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
   }
   render() {
     return (
