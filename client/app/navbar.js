@@ -10,7 +10,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <div className="navbar">
-        <h1>RandomPostBot500</h1>
+        <h1>RandomPostBot8000</h1>
         <button className="navbar">
         </button>
       </div>
