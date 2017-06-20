@@ -14,11 +14,10 @@ app.get('/', function (req, res) {
 
 app.get('/generate', function (req, res) {
   res.statuscode = 200;
-  /*var message = {
-    text: "",
-    imgUrl: ""
-  };*/
-  var message = "Hello World!";
+  var message = {
+    text: "This is what happens when you feed the animals",
+    imgUrl: "http://7bna.net/images/picture/picture-10.jpg"
+  };
   var jsonMessage = JSON.stringify(message);
   res.send(jsonMessage);
 });
