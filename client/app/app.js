@@ -8,12 +8,13 @@ class App extends React.Component {
     this.state = {
 
     };
+    this.list = [1, 2, 3];
   }
   render() {
     return (
       <div className="app">
         <Navbar></Navbar>
-        <ContentList></ContentList>
+        <ContentList>{this.list}</ContentList>
       </div>
     );
   }
