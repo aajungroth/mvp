@@ -6,12 +6,12 @@ class Navbar extends React.Component {
 
     };
   }
-
   render() {
     return (
       <div className="navbar">
         <h1>RandomPostBot8000</h1>
-        <button className="navbar">
+        <button className="navbar" onClick={() => this.props.onClick()}>
+          Generate
         </button>
       </div>
     );

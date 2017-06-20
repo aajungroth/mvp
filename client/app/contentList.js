@@ -8,7 +8,6 @@ class ContentList extends React.Component {
     this.list = this.props.children;
     console.log(this.props);
   }
-
   render() {
     return(
       <div className="contentList">

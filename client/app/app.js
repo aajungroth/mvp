@@ -10,10 +10,13 @@ class App extends React.Component {
     };
     this.list = [1, 2, 3];
   }
+  handleClick() {
+    console.log('Click');
+  }
   render() {
     return (
       <div className="app">
-        <Navbar></Navbar>
+        <Navbar onClick={() => this.handleClick()}></Navbar>
         <ContentList>{this.list}</ContentList>
       </div>
     );
