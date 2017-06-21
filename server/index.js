@@ -10,7 +10,7 @@ var app = express();
 
 app.use(express.static(__dirname + './../Client'));
 
-console.log('Content:', Content)
+//console.log('Content:', Content)
 //console.log('Message:', Message);
 //console.log('Image:', Image);
 
@@ -50,12 +50,16 @@ var content0;
 var content1;
 var content2;
 
+var getRandomArbitrary = function(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
 Content.find(function (err, content) {
   if (err) return console.error(err);
   //console.log(content);
-  console.log(content[0]);
-  console.log(content[content.length - 2]);
-  console.log(content[content.length - 1]);
+  //console.log(content[0]);
+  //console.log(content[content.length - 2]);
+  //console.log(content[content.length - 1]);
   content0 = content[0];
   content1 = content[content.length - 2];
   content2 = content[content.length - 1];
@@ -72,8 +76,27 @@ app.get('/generate', function (req, res) {
       imgUrl: 'http://7bna.net/images/picture/picture-10.jpg'
   };
 
-  message.text = content1.text;
-  message.imgUrl = content1.imageUrl;
+  //console.log('random:', getRandomArbitrary(0, 3));
+
+  //message.text = content1.text;
+  //message.imgUrl = content1.imageUrl;
+  var random = getRandomArbitrary(0, 3);
+  if (random === 0) {
+    message.text = content0.text;
+  } else if (random === 1) {
+    message.text = content1.text;
+  } else {
+    message.text = content2.text;
+  }
+
+  random = getRandomArbitrary(0, 3);
+  if (random === 0) {
+    message.imgUrl = content0.imageUrl;
+  } else if (random === 1) {
+    message.imgUrl = content1.imageUrl;
+  } else {
+    message.imgUrl = content2.imageUrl;
+  }
 
   res.statuscode = 200;
   var jsonMessage = JSON.stringify(message);
