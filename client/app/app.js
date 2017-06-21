@@ -17,7 +17,7 @@ class App extends React.Component {
       cache: false,
       success: function(data) {
         this.setState(prevState => ({
-          list: prevState.list.concat(data)
+          list: [data].concat(prevState.list);
         }));
       }.bind(this),
       error: function(xhr, status, err) {

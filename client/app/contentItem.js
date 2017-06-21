@@ -10,8 +10,6 @@ class ContentItem extends React.Component {
     this.listValue = this.props.listValue;
     this.text = this.listValue.text;
     this.imgUrl = this.listValue.imgUrl;
-    console.log('text', this.text);
-    console.log('imgUrl', this.imgUrl);
     return(
       <li className="contentItem">
         <p>{this.text}</p>
